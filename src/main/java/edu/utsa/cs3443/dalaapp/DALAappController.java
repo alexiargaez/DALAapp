@@ -4,8 +4,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class DALAappController {
+
+    private final AffirmationManager manager = new AffirmationManager();
+
     @FXML
-    private Label welcomeText;
+    public void initialize(){
+        manager.loadAffirmations("/edu/utsa/cs3443/dalaapp/data/affirmations.csv");
+
+        Affirmation a = manager.getRandomAffirmation();
+        if (a != null) affirmation.setText(a.getQuote());
+    }
+    @FXML
+    private Label affirmation;
 
     @FXML
     protected void onHelloButtonClick() {
