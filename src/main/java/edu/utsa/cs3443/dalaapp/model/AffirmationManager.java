@@ -32,7 +32,7 @@ public class AffirmationManager {
         // 2) open the CSV from resources
         try (InputStream in = getClass().getResourceAsStream(resourcePath)) {
             if (in == null) {
-                System.out.println("CSV not found: " + );
+                System.out.println("CSV not found: ");
                 return;
             }
             try (BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
