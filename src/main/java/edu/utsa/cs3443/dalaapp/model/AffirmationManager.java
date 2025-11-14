@@ -10,7 +10,7 @@ public class AffirmationManager {
     // All affirmations
     private final ArrayList<Affirmation> allAffirmations = new ArrayList<>();
 
-    // Per-category lists (kept human-readable to match your UI)
+    // Per-category lists
     private final ArrayList<Affirmation> selfLoveAffirmations = new ArrayList<>();
     private final ArrayList<Affirmation> funnyAffirmations = new ArrayList<>();
     private final ArrayList<Affirmation> motivationalAffirmations = new ArrayList<>();
