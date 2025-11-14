@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 
-<AnchorPane fx:id="welcomeRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane fx:id="welcomeRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-2.0" layoutY="-1.0">
+         <image>
+            <Image url="@../images/menu.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="208.0" layoutY="160.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX;" text="Self-love" textFill="#717744">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="208.0" layoutY="215.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: #717744; -fx-background-radius: 50PX;" text="Funny" textFill="#bcbd8b">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="208.0" layoutY="277.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX;" text="Random" textFill="#717744">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="206.0" layoutY="98.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: #717744; -fx-background-radius: 50PX;" text="Motivational" textFill="#bcbd8b">
+         <font>
+            <Font name="Droid Sans" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
