@@ -12,12 +12,12 @@
             <Image url="@../images/funny.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="174.0" layoutY="275.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #717744;" text="Go Back to Homepage  -&gt;" textAlignment="CENTER" textFill="#bcbd8b">
+      <Button alignment="CENTER" layoutX="174.0" layoutY="275.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #717744; -fx-border-color: #bcbd8c; -fx-border-radius: 50px;" text="Go Back to Homepage  -&gt;" textAlignment="CENTER" textFill="#bcbd8b">
          <font>
             <Font name="Droid Sans Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="174.0" layoutY="326.0" mnemonicParsing="false" onAction="#writeFunnyClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px;" text="Write Your Own Affirmation  -&gt;" textFill="#717744">
+      <Button layoutX="174.0" layoutY="326.0" mnemonicParsing="false" onAction="#writeFunnyClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Write Your Own Affirmation  -&gt;" textFill="#717744">
          <font>
             <Font name="Droid Sans Bold" size="12.0" />
          </font>
