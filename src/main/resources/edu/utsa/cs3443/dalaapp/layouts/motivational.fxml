@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../images/motivational.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="190.0" layoutY="325.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #BCBD8B; -fx-border-radius: 50px; -fx-border-color: #717744;" text="Write your own affirmation" textFill="#717744">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="190.0" layoutY="275.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #717744; -fx-border-radius: 50px; -fx-border-color: white;" text="Go back to home page" textFill="#bcbd8b">
+         <font>
+            <Font name="Droid Sans Bold" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
