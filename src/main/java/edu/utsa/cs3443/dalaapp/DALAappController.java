@@ -5,6 +5,9 @@ import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/**
+ * Controller to handle the application as a whole.
+ */
 public class DALAappController {
 
 

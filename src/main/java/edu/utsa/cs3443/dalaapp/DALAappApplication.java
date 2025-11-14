@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * The DALAApplication class to instantiate the application.
+ */
 public class DALAappApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {

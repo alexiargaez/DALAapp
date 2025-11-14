@@ -1,11 +1,13 @@
-// Funny affirmation screen controller for the funny screen view.
-// covered by Lauren
 package edu.utsa.cs3443.dalaapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/**
+ * Funny affirmation screen controller for the funny screen view.
+ * @author kll111
+ */
 public class FunnyScreenController {
     @FXML
     private Label funnyAffirmationLabel;
@@ -15,6 +17,10 @@ public class FunnyScreenController {
 
     }
 
+    /**
+     * Method to send user to
+     * @param event
+     */
     @FXML
     void writeFunnyClicked(ActionEvent event) {
 
