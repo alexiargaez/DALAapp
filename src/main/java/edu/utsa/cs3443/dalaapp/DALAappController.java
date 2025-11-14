@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 
 public class DALAappController {
 
+
     private final AffirmationManager manager = new AffirmationManager();
 
     @FXML
@@ -15,10 +16,11 @@ public class DALAappController {
         if (a != null) affirmation.setText(a.getQuote());
     }
     @FXML
-    private Label affirmation;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private void onWelcome(ActionEvent e) {
+        FXMLLoader fx = new FXMLLoader(getClass().getResource("/edu/utsa/cs3443/dalaapp/layouts/menu.fxml"));
+        Scene menu = new Scene(fx.load());
+        stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(menu);
+        stage.setTitle("DALA - Menu");
     }
 }
