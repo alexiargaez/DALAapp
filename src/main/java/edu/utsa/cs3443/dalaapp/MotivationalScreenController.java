@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class MotivationalScreenController {
 
-    @FXML private Label motivationalAffirmationLabel; // fx:id
+    @FXML private Label motivationalAffirmationLabel;
 
     @FXML
     public void initialize() { loadAffirmation(); }
