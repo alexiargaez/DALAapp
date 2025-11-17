@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.DALAappController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
@@ -14,7 +13,7 @@
             <Image url="@images/welcome.png" />
          </image>
       </ImageView>
-      <Button blendMode="OVERLAY" layoutX="147.0" layoutY="165.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="307.0" style="-fx-background-color: EFF1ED; -fx-background-radius: 50PX; -fx-padding: ;" text="Start your journey today" textAlignment="CENTER" textFill="#717744">
+      <Button blendMode="OVERLAY" layoutX="147.0" layoutY="165.0" mnemonicParsing="false" onAction="#onStart" prefHeight="102.0" prefWidth="307.0" style="-fx-background-color: EFF1ED; -fx-background-radius: 50PX; -fx-padding: ;" text="Start your journey today" textAlignment="CENTER" textFill="#717744">
          <font>
             <Font name="Droid Sans Bold" size="21.0" />
          </font>

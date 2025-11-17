@@ -1,33 +1,35 @@
 package edu.utsa.cs3443.dalaapp;
 
 import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
-import edu.utsa.cs3443.dalaapp.model.Affirmation;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 /**
  * User-made Affirmation Screen Controller for the User-made screen view.
  */
-public class UserMadeScreenController {
 
-        @FXML private TextArea txtAffirmation;      // fx:id in Scene Builder
-        @FXML private ComboBox<String> cmbCategory; // optional; if you didn’t add it, remove uses
+
+    public class UserMadeScreenController {
+        package edu.utsa.cs3443.dalaapp;
+
+import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+    public class UserMadeScreenController {
+
+        @FXML private TextArea txtAffirmation;
+        @FXML private ComboBox<String> cmbCategory;
         @FXML private Button save;
         @FXML private Button cancel;
-
-        @FXML
-        private TextField userInputTextField;
-
-        @FXML
-        void backButtonClicked(ActionEvent event) {
-            launchScreen("menu", "DALA — Menu");
-        }
 
         @FXML
         public void initialize() {
@@ -58,31 +60,32 @@ public class UserMadeScreenController {
 
         @FXML
         private void onCancel() {
-            launchScreen("menu", "DALA — Menu");
+            switchScene("/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
         }
-
 
         private void goToCategory(String category) {
-            String fxml, title;
-            switch (category) {
-                case "Self-Love" -> { fxml = "/edu/utsa/cs3443/dalaapp/layouts/self-love.fxml"; title = "DALA — Self-Love"; }
-                case "Funny"     -> { fxml = "/edu/utsa/cs3443/dalaapp/layouts/funny.fxml";     title = "DALA — Funny"; }
-                default          -> { fxml = "/edu/utsa/cs3443/dalaapp/layouts/motivational.fxml"; title = "DALA — Motivational"; }
-            }
-            launchScreen(fxml, title);
+            String fxml = switch (category) {
+                case "Self-Love" -> "/edu/utsa/cs3443/dalaapp/layouts/self-love.fxml";
+                case "Funny"     -> "/edu/utsa/cs3443/dalaapp/layouts/funny.fxml";
+                default          -> "/edu/utsa/cs3443/dalaapp/layouts/motivational.fxml";
+            };
+            switchScene(fxml);
         }
 
-    private void launchScreen(String fxml, String title){
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layouts/" + fxml +".fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-
-            stage.setTitle(title);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e){
-            e.printStackTrace();
+        private void switchScene(String fxmlPath) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+                Stage stage = (Stage) (save != null ? save.getScene().getWindow()
+                        : cancel.getScene().getWindow());
+                stage.setScene(new Scene(root, 1000, 600));
+                stage.show();
+            } catch (Exception ex) {
+                new Alert(Alert.AlertType.ERROR, "Navigation error:\n" + ex.getMessage()).showAndWait();
+                ex.printStackTrace();
+            }
         }
     }
+
+
+
 }
