@@ -44,7 +44,15 @@ public class AffirmationManager {
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         }
+    }
+
+        private void ensureParentFolder() {
+            File f = new File(dataFilename);
+            File parent = f.getParentFile();
+            if (parent != null && !parent.exists()) parent.mkdirs();
+        }
         public void saveAllToFile () {
+            ensureParentFolder();
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(dataFilename))) {
                 bw.write("Id,Quote,Category,isUserMade");
                 bw.newLine();
@@ -56,11 +64,12 @@ public class AffirmationManager {
                 System.out.println("Error saving affirmations: " + e.getMessage());
             }
         }
-    }
+
 
     private void ensureDataFileExists() {
         File f = new File(dataFilename);
         if (!f.exists()) {
+            ensureParentFolder();
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
                 bw.write("Id,Quote,Category,isUserMade");
                 bw.newLine();
