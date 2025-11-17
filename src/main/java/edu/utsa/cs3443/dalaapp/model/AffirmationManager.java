@@ -122,5 +122,9 @@ public class AffirmationManager {
 
 
     }
+
+    public Affirmation getRandomAffirmationByCategory(String s) {
+        return affirmations.get(rand.nextInt(affirmations.size()));
+    }
 }
 
