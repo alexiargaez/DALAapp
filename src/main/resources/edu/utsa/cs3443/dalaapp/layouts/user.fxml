@@ -13,11 +13,13 @@
             <Image url="@../images/user.png" />
          </image>
       </ImageView>
-      <TextField fx:id="userInputTextField" alignment="TOP_LEFT" layoutX="102.0" layoutY="78.0" prefHeight="178.0" prefWidth="395.0" promptText="Enter Here..." style="-fx-background-color: #F7FAF5;" />
+      <TextField alignment="TOP_LEFT" layoutX="102.0" layoutY="78.0" prefHeight="178.0" prefWidth="395.0" promptText="Enter Here..." style="-fx-background-color: #F7FAF5;" />
       <Button layoutX="174.0" layoutY="322.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: white;" text="Go back to your home page" textFill="#bcbd8b">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font>
       </Button>
+      <Button layoutX="161.0" layoutY="277.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+      <Button layoutX="374.0" layoutY="273.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="33.0" prefWidth="66.0" text="Cancel" />
    </children>
 </AnchorPane>

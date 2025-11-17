@@ -12,7 +12,7 @@ public class DALAappApplication extends Application {
     Parent root = FXMLLoader.load(
             getClass().getResource("/edu/utsa/cs3443/dalaapp/layouts/welcome.fxml"));
         stage.setTitle("DALA — Daily Affirmations");
-        stage.setScene(new Scene(root, 1000, 600));
+        stage.setScene(new Scene(root, 600, 400));
         stage.show();
 }
     public static void main(String[] args){

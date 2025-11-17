@@ -16,55 +16,68 @@ public class AffirmationManager {
         return instance;
     }
 
-    private final ArrayList<Affirmation> affirmations;
-    private final String dataFilename;
-
+    private final ArrayList<Affirmation> affirmations = new ArrayList<>();
+    private final String dataFilename = "data/affirmations.csv"; // plain file path at project root
     private final Random rand = new Random();
 
-    private AffirmationManager() {
-        this.affirmations = new ArrayList<>();
-        this.dataFilename = "data/affirmations.csv";
-    }
+    private AffirmationManager() {}
 
+    // ---------- LOAD ----------
     public void loadFromFile() {
         affirmations.clear();
         ensureDataFileExists();
 
         try (Scanner scanner = new Scanner(new File(dataFilename))) {
-            if (scanner.hasNextLine()) {
-                scanner.nextLine();
-            }
+            if (scanner.hasNextLine()) scanner.nextLine(); // header
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 Affirmation a = parseLineToAffirmation(line);
-                if (a != null) {
-                    affirmations.add(a);
-                }
+                if (a != null) affirmations.add(a);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         }
     }
 
-        private void ensureParentFolder() {
-            File f = new File(dataFilename);
-            File parent = f.getParentFile();
-            if (parent != null && !parent.exists()) parent.mkdirs();
-        }
-        public void saveAllToFile () {
-            ensureParentFolder();
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(dataFilename))) {
-                bw.write("Id,Quote,Category,isUserMade");
+    // ---------- SAVE (rewrite entire file) ----------
+    public void saveAllToFile() {
+        ensureParentFolder();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(dataFilename))) {
+            bw.write("Id,Quote,Category,isUserMade");
+            bw.newLine();
+            for (Affirmation a : affirmations) {
+                bw.write(toCsvLine(a));
                 bw.newLine();
-                for (Affirmation a : affirmations) {
-                    bw.write(toCsvLine(a));
-                    bw.newLine();
-                }
-            } catch (IOException e) {
-                System.out.println("Error saving affirmations: " + e.getMessage());
             }
+        } catch (IOException e) {
+            System.out.println("Error saving affirmations: " + e.getMessage());
         }
+    }
 
+    // ---------- Public API ----------
+    public Affirmation getRandomAffirmationByCategory(String category) {
+        ArrayList<Affirmation> tmp = new ArrayList<>();
+        for (Affirmation a : affirmations) {
+            if (a.getCategory().equalsIgnoreCase(category)) tmp.add(a);
+        }
+        if (tmp.isEmpty()) return null;
+        return tmp.get(rand.nextInt(tmp.size()));
+    }
+
+    public boolean addUserAffirmation(String text, String category) {
+        if (text == null || text.isBlank() || category == null || category.isBlank()) return false;
+        int id = nextId();
+        affirmations.add(new Affirmation(id, text.trim(), category.trim(), true));
+        saveAllToFile();
+        return true;
+    }
+
+    // ---------- Helpers ----------
+    private void ensureParentFolder() {
+        File f = new File(dataFilename);
+        File parent = f.getParentFile();
+        if (parent != null && !parent.exists()) parent.mkdirs();
+    }
 
     private void ensureDataFileExists() {
         File f = new File(dataFilename);
@@ -83,7 +96,6 @@ public class AffirmationManager {
     private Affirmation parseLineToAffirmation(String line) {
         String[] p = line.split(",", -1);
         if (p.length < 4) return null;
-
         try {
             int id = Integer.parseInt(p[0].trim());
             String quote = p[1].trim();
@@ -103,28 +115,17 @@ public class AffirmationManager {
 
     private String toCsvLine(Affirmation a) {
         String q = a.getQuote();
-        if (q.contains(",") || q.contains("\"")) {
-            q = "\"" + q.replace("\"", "\"\"") + "\"";
-        }
+        if (q.contains(",") || q.contains("\"")) q = "\"" + q.replace("\"","\"\"") + "\"";
         String c = a.getCategory();
-        if (c.contains(",") || c.contains("\"")) {
-            c = "\"" + c.replace("\"", "\"\"") + "\"";
-        }
+        if (c.contains(",") || c.contains("\"")) c = "\"" + c.replace("\"","\"\"") + "\"";
         return a.getId() + "," + q + "," + c + "," + a.isUserMade();
     }
 
     private int nextId() {
         int max = 0;
-        for (Affirmation a : affirmations) {
-            if (a.getId() > max) max = a.getId();
-        }
+        for (Affirmation a : affirmations) if (a.getId() > max) max = a.getId();
         return max + 1;
-
-
-    }
-
-    public Affirmation getRandomAffirmationByCategory(String s) {
-        return affirmations.get(rand.nextInt(affirmations.size()));
     }
 }
+
 
