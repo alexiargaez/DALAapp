@@ -6,70 +6,31 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
 
-/**
- * Controller class to handle the Menu screen view
- * @author Alesia Tonegari
- */
 public class MenuScreenController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
-
-
-
-    public void switchToFunnyScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("funny.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow());
-        scene = new Scene(root);
-        stage.setScene(scene);
+    private void switchTo(ActionEvent event, String fxmlPath) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 400));
         stage.show();
     }
 
-
-
-
-    public void switchToMotivationalScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("motivational.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow());
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToFunnyScreenController(ActionEvent event) throws Exception {
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/funny.fxml");
     }
 
-
-    public void switchToSelfLoveScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("self-love.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow());
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToMotivationalScreenController(ActionEvent event) throws Exception {
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/motivational.fxml");
     }
 
-
-    public void switchToUserMadeScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("user.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow());
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToSelfLoveScreenController(ActionEvent event) throws Exception {
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/self-love.fxml");
     }
 
-
-    //i will add to manager class
-
-
-    //public void start(Stage stage){
-    //       try {
-    //          Parent root = FXMLLoader.Load(getClass().getResource("menu.fxml"));
-    //           Scene scene = new Scene(root);
-    //           stage.setScene(scene);
-    //           stage.show();
-    //}
-
-
+    public void switchToUserMadeScreenController(ActionEvent event) throws Exception {
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
+    }
 }
 
 
