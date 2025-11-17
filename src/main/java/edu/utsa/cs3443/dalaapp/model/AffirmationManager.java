@@ -126,6 +126,17 @@ public class AffirmationManager {
         for (Affirmation a : affirmations) if (a.getId() > max) max = a.getId();
         return max + 1;
     }
+    public int getAffirmationCount() {
+        return affirmations.size();
+    }
+    public Affirmation getAffirmationById(int id) {
+        for (Affirmation a : affirmations) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null; // if not found
+    }
 }
 
 
