@@ -9,11 +9,10 @@ public class WelcomeScreenController {
 
     @FXML
     public void initialize() {
-        AppState.ensureLoaded();
+        AffirmationManager.getInstance().loadAffirmations("/edu/utsa/cs3443/dalaapp/data/affirmations.csv");
     }
 
     @FXML
     private void onStart() {
-        SceneNav.go(start, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 }
