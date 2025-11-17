@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +17,6 @@ import java.io.IOException;
  * @author kll111
  */
 public class FunnyScreenController {
-    private AffirmationManager aManager;
 
     @FXML
     private Label funnyAffirmationLabel;
@@ -27,7 +27,6 @@ public class FunnyScreenController {
      */
     @FXML
     public void initialize() {
-        aManager = AffirmationManager.getInstance();
         loadAffirmation();
     }
 
@@ -38,23 +37,8 @@ public class FunnyScreenController {
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layouts/menu.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-
-
-            MenuScreenController menuScreenController = fxmlLoader.getController();
-            //menuScreenController.setMainStage(stage);
-
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }//idk i lowkey took this from the bankSys app
-
+        launchScreen("menu", "Main Menu Screen");
+    }
 
 
     /**
@@ -64,19 +48,7 @@ public class FunnyScreenController {
      */
     @FXML
     void writeFunnyClicked(ActionEvent event) {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layouts/user.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-
-            UserMadeScreenController userScreenController = fxmlLoader.getController();
-            //menuScreenController.setMainStage(stage);
-
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        launchScreen("user", "User-made Affirmations");
     }
 
     /**
@@ -92,6 +64,27 @@ public class FunnyScreenController {
             funnyAffirmationLabel.setText("No Funny affirmations available.");
         }
     }
+
+    /**
+     * Takes the given params and launches the
+     * corresponding screen view
+     * @param fxml
+     * @param title
+     */
+    private void launchScreen(String fxml, String title){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layouts/" + fxml +".fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+
+            stage.setTitle(title);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }//idk i lowkey took this from the bankSys app
+
 
 
     /**
