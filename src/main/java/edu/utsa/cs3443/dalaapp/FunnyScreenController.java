@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.dalaapp;
 
 import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
+import edu.utsa.cs3443.dalaapp.model.Affirmation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,18 +17,20 @@ import java.io.IOException;
  */
 public class FunnyScreenController {
     private AffirmationManager aManager;
-    //private Stage funnyStage;
+
+    @FXML
+    private Label funnyAffirmationLabel;
 
     /**
-     * Method to initialize a new AffirmationManager object.
+     * Method to initialize a new AffirmationManager object
+     * & the displayed affirmation.
      */
     @FXML
     public void initialize() {
         aManager = AffirmationManager.getInstance();
+        loadAffirmation();
     }
 
-    @FXML
-    private Label funnyAffirmationLabel;
 
     /**
      * Method to send the user back to the main screen
@@ -50,7 +53,7 @@ public class FunnyScreenController {
         } catch (IOException e){
             e.printStackTrace();
         }
-    }
+    }//idk i lowkey took this from the bankSys app
 
 
 
@@ -61,6 +64,18 @@ public class FunnyScreenController {
     @FXML
     void writeFunnyClicked(ActionEvent event) {
 
+    }
+
+
+    private void loadAffirmation() {
+        Affirmation affirmation = AffirmationManager.getInstance().getRandomAffirmationByCategory("Funny");
+
+        if (affirmation != null) {
+            funnyAffirmationLabel.setText(affirmation.getQuote());
+        }
+        else {
+            funnyAffirmationLabel.setText("No Funny affirmations available.");
+        }
     }
 
 
