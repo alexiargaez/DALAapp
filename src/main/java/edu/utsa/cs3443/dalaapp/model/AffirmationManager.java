@@ -138,5 +138,6 @@ public class AffirmationManager {
         return null; // if not found
     }
 }
+}
 
 
