@@ -9,7 +9,7 @@ public class WelcomeScreenController {
 
     @FXML
     public void initialize() {
-        AffirmationManager.getInstance().loadAffirmations("/edu/utsa/cs3443/dalaapp/data/affirmations.csv");
+
     }
 
     @FXML
