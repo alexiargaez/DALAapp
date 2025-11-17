@@ -76,6 +76,4 @@ import javafx.stage.Stage;
                 ex.printStackTrace();
             }
         }
-
-
 }
