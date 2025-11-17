@@ -4,11 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class WelcomeScreenController {
-    @FXML private Button start;
+    @FXML
+    private Button start;
 
     @FXML
     public void initialize() {
-        AppState.ensureLoaded(); }
+        AppState.ensureLoaded();
+    }
 
     @FXML
     private void onStart() {
