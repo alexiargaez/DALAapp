@@ -7,15 +7,5 @@ import javafx.scene.control.Button;
  * @author
  */
 public class MenuScreenController {
-    @FXML
-    private Button start;
 
-    @FXML
-    public void initialized(){
-        appState.ensureLoaded();
-    }
-
-    @FXML private void onStart(){
-        SceneNav.go(start,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu" )
-    }
 }
