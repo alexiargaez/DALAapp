@@ -21,7 +21,7 @@ public class MenuScreenController {
 
 
     public void switchToFunnyScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.Load(getClass().getResource("funny.fxml"));
+        root = FXMLLoader.load(getClass().getResource("funny.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
@@ -32,7 +32,7 @@ public class MenuScreenController {
 
 
     public void switchToMotivationalScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.Load(getClass().getResource("motivational.fxml"));
+        root = FXMLLoader.load(getClass().getResource("motivational.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
@@ -41,7 +41,7 @@ public class MenuScreenController {
 
 
     public void switchToSelfLoveScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.Load(getClass().getResource("self-love.fxml"));
+        root = FXMLLoader.load(getClass().getResource("self-love.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
@@ -50,7 +50,7 @@ public class MenuScreenController {
 
 
     public void switchToUserMadeScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.Load(getClass().getResource("user.fxml"));
+        root = FXMLLoader.load(getClass().getResource("user.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);

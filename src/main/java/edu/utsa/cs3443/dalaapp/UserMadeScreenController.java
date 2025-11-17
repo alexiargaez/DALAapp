@@ -13,18 +13,7 @@ import javafx.stage.Stage;
  */
 
 
-    public class UserMadeScreenController {
-        package edu.utsa.cs3443.dalaapp;
-
-import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.stage.Stage;
-
-    public class UserMadeScreenController {
+public class UserMadeScreenController {
 
         @FXML private TextArea txtAffirmation;
         @FXML private ComboBox<String> cmbCategory;
