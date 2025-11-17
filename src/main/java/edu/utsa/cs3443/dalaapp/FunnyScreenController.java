@@ -58,15 +58,30 @@ public class FunnyScreenController {
 
 
     /**
-     * Method to send user to
+     * Method to send user to the user.fxml screen
+     * to create their new Funny Affirmation.
      * @param event
      */
     @FXML
     void writeFunnyClicked(ActionEvent event) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layouts/user.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
 
+            UserMadeScreenController userScreenController = fxmlLoader.getController();
+            //menuScreenController.setMainStage(stage);
+
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
+    /**
+     * Loads in a random Affirmation from the Funny category
+     */
     private void loadAffirmation() {
         Affirmation affirmation = AffirmationManager.getInstance().getRandomAffirmationByCategory("Funny");
 
