@@ -26,6 +26,7 @@ public class FunnyScreenController {
      */
     @FXML
     public void initialize() {
+        launchScreen("funny", "DALA — Funny");
         loadAffirmation();
     }
 
@@ -36,7 +37,7 @@ public class FunnyScreenController {
      */
     @FXML
     void backButtonClicked(ActionEvent event) {
-        launchScreen("menu", "Main Menu Screen");
+        launchScreen("menu", "DALA — Menu");
     }
 
 
@@ -47,7 +48,7 @@ public class FunnyScreenController {
      */
     @FXML
     void writeFunnyClicked(ActionEvent event) {
-        launchScreen("user", "User-made Affirmations");
+        launchScreen("user", "DALA — User-Made");
     }
 
     /**
@@ -82,5 +83,5 @@ public class FunnyScreenController {
         } catch (IOException e){
             e.printStackTrace();
         }
-    }//idk i lowkey took this from the bankSys app
+    }//idk i lowkey modeled this after the bankSys app
 }
