@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.dalaapp;
 
 import edu.utsa.cs3443.dalaapp.model.Affirmation;
+import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class UserMadeScreenController {
+    private AffirmationManager affirmationManager;
 
     @FXML private TextField inputAffirmationTextField;
 
@@ -75,6 +77,12 @@ public class UserMadeScreenController {
         a.setCategory("");
         a.setQuote("");
         a.setUserMade(true);
+
+        if (affirmationManager.addUserAffirmation("","")){
+            inputAffirmationTextField.setText("New Affirmation Added Successfully!");
+        } else {
+            inputAffirmationTextField.setText("New Affirmation Could Not Be Added.");
+        }
     }
 
     private void switchScene(ActionEvent e, String fxml) throws Exception {
