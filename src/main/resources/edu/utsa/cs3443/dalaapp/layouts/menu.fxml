@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane fx:id="welcomeRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.MenuScreenController">
     <children>
         <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-2.0" layoutY="-1.0">
@@ -28,7 +27,7 @@
                 <Font size="15.0" />
             </font>
         </Button>
-        <Button layoutX="208.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToRandomScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Random" textFill="#717744">
+        <Button layoutX="208.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToUserMadeScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Random" textFill="#717744">
             <font>
                 <Font size="15.0" />
             </font>

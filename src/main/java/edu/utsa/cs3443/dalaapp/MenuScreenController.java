@@ -49,8 +49,8 @@ public class MenuScreenController {
     }
 
 
-    public void switchToRandomScreenController(ActionEvent event) throws IOException{
-        root = FXMLLoader.Load(getClass().getResource("random.fxml"));
+    public void switchToUserMadeScreenController(ActionEvent event) throws IOException{
+        root = FXMLLoader.Load(getClass().getResource("user.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
