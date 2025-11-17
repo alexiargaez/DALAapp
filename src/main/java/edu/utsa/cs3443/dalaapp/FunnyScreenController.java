@@ -83,22 +83,4 @@ public class FunnyScreenController {
             e.printStackTrace();
         }
     }//idk i lowkey took this from the bankSys app
-
-
-
-    /**
-     * Temporary Getter for the FunnyAffirmationLabel
-     * @return Label
-     */
-    public Label getFunnyAffirmationLabel() {
-        return funnyAffirmationLabel;
-    }
-
-    /**
-     * Temp Setter for the funnyAffirmationLabel
-     * @param funnyAffirmationLabel
-     */
-    public void setFunnyAffirmationLabel(Label funnyAffirmationLabel) {
-        this.funnyAffirmationLabel = funnyAffirmationLabel;
-    }
 }
