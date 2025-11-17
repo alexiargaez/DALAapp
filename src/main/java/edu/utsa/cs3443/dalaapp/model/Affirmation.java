@@ -16,20 +16,25 @@ public class Affirmation {
     }
 
     public int getId(){
+
         return id;
     }
     public String getQuote(){
+
         return quote;
     }
     public String getCategory(){
+
         return category;
     }
     public boolean  isUserMade(){
+
         return userMade;
     }
 
     @Override
     public String toString() {
+
         return quote;
     }
 }
