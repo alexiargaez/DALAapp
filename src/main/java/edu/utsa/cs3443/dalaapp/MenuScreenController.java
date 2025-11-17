@@ -63,7 +63,7 @@ public class MenuScreenController {
 
     //public void start(Stage stage){
     //       try {
-    //          Parent root = FXMLLoader.Load(getClass().getResource("Menu.fxml"));
+    //          Parent root = FXMLLoader.Load(getClass().getResource("menu.fxml"));
     //           Scene scene = new Scene(root);
     //           stage.setScene(scene);
     //           stage.show();
