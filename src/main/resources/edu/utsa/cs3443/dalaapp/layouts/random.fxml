@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.RandomController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.RandomScreenController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
@@ -20,6 +20,9 @@
          <font>
             <Font name="Droid Sans Bold" size="12.0" />
          </font></Button>
-      <Label fx:id="randomAffirmationLabel" layoutX="94.0" layoutY="81.0" prefHeight="138.0" prefWidth="412.0" text="Label" />
+      <Label fx:id="randomAffirmationLabel" alignment="CENTER" layoutX="94.0" layoutY="81.0" prefHeight="138.0" prefWidth="412.0" textAlignment="CENTER" textFill="#eff1ed" wrapText="true">
+         <font>
+            <Font name="Droid Sans Bold" size="20.0" />
+         </font></Label>
    </children>
 </AnchorPane>

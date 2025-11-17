@@ -13,16 +13,51 @@
             <Image url="@../images/user.png" />
          </image>
       </ImageView>
-      <TextField fx:id="inputAffirmationTextField" alignment="TOP_LEFT" layoutX="102.0" layoutY="78.0" prefHeight="178.0" prefWidth="395.0" promptText="Enter Your Affirmation Here..." style="-fx-background-color: #F7FAF5;">
+      <TextField fx:id="inputAffirmationTextField" alignment="TOP_LEFT" layoutX="72.0" layoutY="78.0" prefHeight="106.0" prefWidth="460.0" promptText="Enter Your Affirmation Here..." style="-fx-background-color: #eff1ed; -fx-background-radius: 25px;">
          <font>
             <Font name="Droid Sans Mono" size="18.0" />
          </font></TextField>
-      <Button layoutX="174.0" layoutY="322.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: white;" text="Go back to your home page" textFill="#bcbd8b">
+      <Button layoutX="174.0" layoutY="322.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #bcbd8b;" text="Go back to your home page" textFill="#bcbd8b">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="161.0" layoutY="277.0" mnemonicParsing="false" onAction="#onSaveClicked" text="Save" />
-      <Button layoutX="374.0" layoutY="273.0" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="33.0" prefWidth="66.0" text="Cancel" />
+      <Button layoutX="175.0" layoutY="273.0" mnemonicParsing="false" onAction="#onSaveClicked" prefHeight="33.0" prefWidth="69.0" style="-fx-background-color: #BCBD8B; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Save" textFill="#717744">
+         <font>
+            <Font name="Droid Sans Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="360.0" layoutY="273.0" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #BCBD8B; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: #717744;" text="Cancel" textFill="#717744">
+         <font>
+            <Font name="Droid Sans Bold" size="14.0" />
+         </font></Button>
+      <RadioButton layoutX="75.0" layoutY="235.0" mnemonicParsing="false" text="Funny" textFill="#eff1ed">
+         <font>
+            <Font name="Droid Sans" size="15.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="165.0" layoutY="235.0" mnemonicParsing="false" text="Self-Love" textFill="#eff1ed">
+         <font>
+            <Font name="Droid Sans" size="15.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="280.0" layoutY="235.0" mnemonicParsing="false" text="Motivational" textFill="#eff1ed">
+         <font>
+            <Font name="Droid Sans" size="15.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="415.0" layoutY="235.0" mnemonicParsing="false" text="Motivational" textFill="#eff1ed">
+         <font>
+            <Font name="Droid Sans" size="15.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="70.0" layoutY="205.0" prefHeight="22.0" prefWidth="194.0" style="-fx-background-color: #eff1ed; -fx-background-radius: 80px; -fx-border-color: #eff1ed; -fx-border-radius: 80px; -fx-border-width: 2px;" text=" Choose your category:" textFill="#717744">
+         <font>
+            <Font name="Droid Sans Mono" size="14.0" />
+         </font></Label>
+      <Label fx:id="errorMessageLabel" alignment="CENTER" layoutX="123.0" layoutY="52.0" prefHeight="18.0" prefWidth="353.0" textAlignment="CENTER" textFill="#eff1ed">
+         <font>
+            <Font name="Droid Sans Mono" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

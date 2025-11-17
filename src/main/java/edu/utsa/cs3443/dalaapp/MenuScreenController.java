@@ -31,6 +31,10 @@ public class MenuScreenController {
     public void switchToUserMadeScreenController(ActionEvent event) throws Exception {
         switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
     }
+
+    public void switchToRandomScreenController(ActionEvent event) throws Exception {
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/random.fxml");
+    }
 }
 
 

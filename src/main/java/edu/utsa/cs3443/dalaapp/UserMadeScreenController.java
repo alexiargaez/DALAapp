@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -15,16 +16,11 @@ public class UserMadeScreenController {
     private AffirmationManager affirmationManager;
 
     @FXML private TextField inputAffirmationTextField;
+    @FXML private Label errorMessageLabel;
 
     @FXML
     public void initialize() {
-
-        /*
-        if (cmbCategory != null) {
-            cmbCategory.getItems().setAll("Motivational", "Self-Love", "Funny");
-            cmbCategory.getSelectionModel().select("Motivational");
-        }
-        */
+        /* need code here */
     }
 
     @FXML
@@ -39,37 +35,14 @@ public class UserMadeScreenController {
 
     @FXML
     void onSaveClicked(ActionEvent event) {
-        /*
-        String text = inputAffirmationTextField.getText() == null ? "" : inputAffirmationTextField.getText().trim();
-        String cat  = (cmbCategory != null && cmbCategory.getValue() != null)
-                ? cmbCategory.getValue() : "Motivational";
-
-        if (text.isBlank()) {
-            new Alert(Alert.AlertType.WARNING, "Please type an affirmation.").showAndWait();
-            return;
+        if(inputAffirmationTextField == null){
+           inputAffirmationTextField.setPromptText("Please enter an affirmation.");
         }
 
-        boolean ok = AffirmationManager.getInstance().addUserAffirmation(text, cat);
-        if (!ok) {
-            new Alert(Alert.AlertType.ERROR, "Could not save.").showAndWait();
-            return;
-        }
-        goToCategory(cat);
-         */
+        /* need code here */
     }
 
-
-    /*
-    private void goToCategory(String category) {
-        String fxml = switch (category) {
-            case "Self-Love" -> "/edu/utsa/cs3443/dalaapp/layouts/self-love.fxml";
-            case "Funny"     -> "/edu/utsa/cs3443/dalaapp/layouts/funny.fxml";
-            default          -> "/edu/utsa/cs3443/dalaapp/layouts/motivational.fxml";
-        };
-        switchScene(fxml);
-    }
-     */
-
+    //NOTE: this method does NAWT work yet.. but trust, it will.
     private void addNewAffirmation(Affirmation a){
         int id = a.getId() + 1;
 
@@ -91,19 +64,4 @@ public class UserMadeScreenController {
         stage.setScene(new Scene(root, 600, 400));
         stage.show();
     }
-
-/*
-    private void switchScene(String fxmlPath) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
-            Stage stage = (Stage) (saveButton != null ? saveButton.getScene().getWindow()
-                    : cancelButton.getScene().getWindow());
-            stage.setScene(new Scene(root, 600, 400));
-            stage.show();
-        } catch (Exception ex) {
-            new Alert(Alert.AlertType.ERROR, "Navigation error:\n" + ex.getMessage()).showAndWait();
-            ex.printStackTrace();
-        }
-
- */
 }

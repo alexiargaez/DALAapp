@@ -22,9 +22,9 @@
             <Font name="Droid Sans Bold" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="funnyAffirmationLabel" alignment="CENTER" layoutX="143.0" layoutY="119.0" prefHeight="110.0" prefWidth="315.0" textAlignment="CENTER" textFill="#eff1ed" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Label fx:id="funnyAffirmationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="143.0" layoutY="119.0" prefHeight="110.0" prefWidth="315.0" textAlignment="CENTER" textFill="#eff1ed" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
          <font>
-            <Font name="Droid Sans Bold" size="14.0" />
+            <Font name="Droid Sans Bold" size="20.0" />
          </font></Label>
    </children>
 </Pane>

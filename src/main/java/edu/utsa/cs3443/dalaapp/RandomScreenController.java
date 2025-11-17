@@ -4,17 +4,37 @@ import edu.utsa.cs3443.dalaapp.model.Affirmation;
 import edu.utsa.cs3443.dalaapp.model.AffirmationManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class RandomController {
+public class RandomScreenController {
 
     @FXML
-    private TextArea randomAffirmationLabel;
+    private Label randomAffirmationLabel;
 
     private AffirmationManager affirmationManager;
     private final Random random = new Random();
+
+    @FXML
+    private void backButtonClicked(ActionEvent event) throws Exception {
+        switchScene(event, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+    }
+
+    @FXML
+    private void writeRandomClicked(ActionEvent event) throws Exception{
+        switchScene(event, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
+    }
+
+    @FXML
+    public void initialize() {
+        loadAffirmation();
+    }
 
     // Called from your Main/Menu controller after loading the FXML
     public void setAffirmationManager(AffirmationManager manager) {
@@ -22,10 +42,13 @@ public class RandomController {
         showRandomAffirmation();
     }
 
+    /*
     @FXML
     private void handleNewRandom(ActionEvent event) {
         showRandomAffirmation();
     }
+    */
+
 
     private void showRandomAffirmation() {
         if (affirmationManager == null) {
@@ -52,9 +75,16 @@ public class RandomController {
         randomAffirmationLabel.setText(randomAffirmation.getQuote());
     }
 
-    @FXML
-    private void handleBackToMenu(ActionEvent event) {
-        System.out.println("Back to menu clicked.");
+    private void loadAffirmation() {
+        Affirmation a = AffirmationManager.getInstance().getRandomAffirmationByCategory("Random");
+        randomAffirmationLabel.setText(a != null ? a.getQuote() : "No Random affirmations available.");
+    }
+
+    private void switchScene(ActionEvent e, String fxml) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
     }
 }
 
