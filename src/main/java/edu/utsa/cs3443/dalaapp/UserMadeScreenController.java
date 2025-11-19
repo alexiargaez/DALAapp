@@ -16,7 +16,7 @@ public class UserMadeScreenController {
     private AffirmationManager affirmationManager;
 
     @FXML private TextField inputAffirmationTextField;
-    @FXML private Label errorMessageLabel;
+    @FXML private Label userMessageLabel;
 
     @FXML
     public void initialize() {
@@ -36,7 +36,7 @@ public class UserMadeScreenController {
     @FXML
     void onSaveClicked(ActionEvent event) {
         if(inputAffirmationTextField == null){
-           inputAffirmationTextField.setPromptText("Please enter an affirmation.");
+           userMessageLabel.setText("Please enter an affirmation below.");
         }
 
         /* need code here */
@@ -52,9 +52,9 @@ public class UserMadeScreenController {
         a.setUserMade(true);
 
         if (affirmationManager.addUserAffirmation("","")){
-            inputAffirmationTextField.setText("New Affirmation Added Successfully!");
+            userMessageLabel.setText("New Affirmation Added Successfully!");
         } else {
-            inputAffirmationTextField.setText("New Affirmation Could Not Be Added.");
+            userMessageLabel.setText("New Affirmation Could Not Be Added.");
         }
     }
 

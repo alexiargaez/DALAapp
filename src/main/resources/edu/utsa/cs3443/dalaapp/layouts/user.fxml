@@ -54,7 +54,7 @@
          <font>
             <Font name="Droid Sans Mono" size="14.0" />
          </font></Label>
-      <Label fx:id="errorMessageLabel" alignment="CENTER" layoutX="123.0" layoutY="52.0" prefHeight="18.0" prefWidth="353.0" textAlignment="CENTER" textFill="#eff1ed">
+      <Label fx:id="userMessageLabel" alignment="CENTER" layoutX="123.0" layoutY="52.0" prefHeight="18.0" prefWidth="353.0" textAlignment="CENTER" textFill="#eff1ed">
          <font>
             <Font name="Droid Sans Mono" size="14.0" />
          </font>
