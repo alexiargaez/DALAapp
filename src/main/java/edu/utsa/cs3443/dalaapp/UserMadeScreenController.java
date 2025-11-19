@@ -39,12 +39,12 @@ public class UserMadeScreenController {
 
     @FXML
     void backButtonClicked(ActionEvent event) throws Exception{
-        switchScene(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+        switchTo(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 
     @FXML
     void onCancelClicked(ActionEvent event) throws Exception {
-        switchScene(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+        switchTo(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 
     @FXML
@@ -93,10 +93,11 @@ public class UserMadeScreenController {
         userMessageLabel.setText("");
     }
 
-    private void switchScene(ActionEvent e, String fxml) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+    private void switchTo(ActionEvent event, String fxmlPath, String title) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
+        stage.setTitle(title);
         stage.show();
     }
 }

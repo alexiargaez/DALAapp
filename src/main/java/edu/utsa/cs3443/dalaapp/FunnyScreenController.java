@@ -22,12 +22,12 @@ public class FunnyScreenController {
 
     @FXML
     private void backButtonClicked(ActionEvent e) throws Exception {
-        switchScene(e, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+        switchTo(e, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 
     @FXML
     private void writeFunnyClicked(ActionEvent e) throws Exception {
-        switchScene(e, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
+        switchTo(e, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml", "DALA — Write Your Own Affirmation!");
     }
 
     @FXML
@@ -38,10 +38,11 @@ public class FunnyScreenController {
         funnyAffirmationLabel.setText(a != null ? a.getQuote() : "No Funny affirmations available.");
     }
 
-    private void switchScene(ActionEvent e, String fxml) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+    private void switchTo(ActionEvent event, String fxmlPath, String title) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
+        stage.setTitle(title);
         stage.show();
     }
 }

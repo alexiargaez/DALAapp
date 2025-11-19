@@ -27,12 +27,12 @@ public class RandomScreenController {
 
     @FXML
     private void backButtonClicked(ActionEvent event) throws Exception {
-        switchScene(event, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 
     @FXML
     private void writeRandomClicked(ActionEvent event) throws Exception{
-        switchScene(event, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
+        switchTo(event, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml", "DALA — Write Your Own Affirmation!");
     }
 
     private void showRandomAffirmation() {
@@ -57,10 +57,11 @@ public class RandomScreenController {
         randomAffirmationLabel.setText(randomAffirmation.getQuote());
     }
 
-    private void switchScene(ActionEvent e, String fxml) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+    private void switchTo(ActionEvent event, String fxmlPath, String title) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
+        stage.setTitle(title);
         stage.show();
     }
 }

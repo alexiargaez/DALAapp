@@ -20,12 +20,12 @@ public class SelfLoveScreenController {
 
     @FXML
     private void backButtonClicked(ActionEvent e) throws Exception {
-        switchScene(e, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+        switchTo(e, "/edu/utsa/cs3443/dalaapp/layouts/menu.fxml", "DALA — Menu");
     }
 
     @FXML
     private void writeSelfLoveClicked(ActionEvent e) throws Exception {
-        switchScene(e, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml");
+        switchTo(e, "/edu/utsa/cs3443/dalaapp/layouts/user.fxml", "DALA — Write Your Own Affirmation!");
     }
 
     @FXML
@@ -36,10 +36,11 @@ public class SelfLoveScreenController {
         selfLoveAffirmationLabel.setText(a != null ? a.getQuote() : "No Self-Love affirmations available.");
     }
 
-    private void switchScene(ActionEvent e, String fxml) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+    private void switchTo(ActionEvent event, String fxmlPath, String title) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 600, 400));
+        stage.setTitle(title);
         stage.show();
     }
 }
