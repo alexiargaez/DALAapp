@@ -17,7 +17,7 @@ public class AffirmationManager {
     }
 
     private final ArrayList<Affirmation> affirmations = new ArrayList<>();
-    private final String dataFilename = "data/affirmations.csv"; // plain file path at project root
+    private final String dataFilename = "data/affirmations.csv";
     private final Random rand = new Random();
 
     private AffirmationManager() {}
@@ -62,6 +62,15 @@ public class AffirmationManager {
         }
         if (tmp.isEmpty()) return null;
         return tmp.get(rand.nextInt(tmp.size()));
+    }
+
+    public Affirmation getAffirmationById(int id) {
+        for (Affirmation a : affirmations) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
     }
 
     public boolean addUserAffirmation(String text, String category) {
@@ -128,14 +137,6 @@ public class AffirmationManager {
     }
     public int getAffirmationCount() {
         return affirmations.size();
-    }
-    public Affirmation getAffirmationById(int id) {
-        for (Affirmation a : affirmations) {
-            if (a.getId() == id) {
-                return a;
-            }
-        }
-        return null; // if not found
     }
 }
 

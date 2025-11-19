@@ -14,7 +14,7 @@
         </ImageView>
         <Button layoutX="206.0" layoutY="98.0" mnemonicParsing="false" onAction="#switchToMotivationalScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: #717744; -fx-background-radius: 50PX; -fx-border-radius: 50px; -fx-border-color: #bcbd8b;" text="Motivational" textFill="#bcbd8b">
             <font>
-                <Font name="Droid Sans" size="15.0" />
+                <Font name="Droid Sans Bold" size="15.0" />
             </font>
         </Button>
         <Button layoutX="208.0" layoutY="160.0" mnemonicParsing="false" onAction="#switchToSelfLoveScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Self-love" textFill="#717744">
@@ -24,12 +24,12 @@
         </Button>
         <Button layoutX="208.0" layoutY="215.0" mnemonicParsing="false" onAction="#switchToFunnyScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: #717744; -fx-background-radius: 50PX; -fx-border-color: #bcbd8b; -fx-border-radius: 50px;" text="Funny" textFill="#bcbd8b">
             <font>
-                <Font size="15.0" />
+                <Font name="Droid Sans Bold" size="15.0" />
             </font>
         </Button>
         <Button layoutX="208.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToRandomScreenController" prefHeight="33.0" prefWidth="188.0" style="-fx-background-color: BCBD8B; -fx-background-radius: 50PX; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Random" textFill="#717744">
             <font>
-                <Font size="15.0" />
+                <Font name="Droid Sans Bold" size="15.0" />
             </font>
         </Button>
     </children>

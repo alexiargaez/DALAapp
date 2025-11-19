@@ -30,22 +30,22 @@
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
-      <RadioButton layoutX="75.0" layoutY="235.0" mnemonicParsing="false" text="Funny" textFill="#eff1ed">
+      <RadioButton layoutX="80.0" layoutY="235.0" mnemonicParsing="false" text="Funny" textFill="#eff1ed">
          <font>
             <Font name="Droid Sans" size="15.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="165.0" layoutY="235.0" mnemonicParsing="false" text="Self-Love" textFill="#eff1ed">
+      <RadioButton layoutX="180.0" layoutY="235.0" mnemonicParsing="false" text="Self-Love" textFill="#eff1ed">
          <font>
             <Font name="Droid Sans" size="15.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="280.0" layoutY="235.0" mnemonicParsing="false" text="Motivational" textFill="#eff1ed">
+      <RadioButton layoutX="300.0" layoutY="235.0" mnemonicParsing="false" text="Motivational" textFill="#eff1ed">
          <font>
             <Font name="Droid Sans" size="15.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="415.0" layoutY="235.0" mnemonicParsing="false" text="Motivational" textFill="#eff1ed">
+      <RadioButton layoutX="445.0" layoutY="235.0" mnemonicParsing="false" text="General" textFill="#eff1ed">
          <font>
             <Font name="Droid Sans" size="15.0" />
          </font>
