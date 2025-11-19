@@ -63,7 +63,7 @@ public class AffirmationManager {
         if (tmp.isEmpty()) return null;
         return tmp.get(rand.nextInt(tmp.size()));
     }
-
+ /*
     public Affirmation getAffirmationById(int id) {
         for (Affirmation a : affirmations) {
             if (a.getId() == id) {
@@ -71,6 +71,12 @@ public class AffirmationManager {
             }
         }
         return null;
+    }
+ */
+
+    public Affirmation getRandomAffirmation() {
+        if (affirmations.isEmpty()) return null;
+        return affirmations.get(rand.nextInt(affirmations.size()));
     }
 
     public boolean addUserAffirmation(String text, String category) {
