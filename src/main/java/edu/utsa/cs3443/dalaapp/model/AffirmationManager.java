@@ -103,13 +103,16 @@ public class AffirmationManager {
     }
 
     private Affirmation parseLineToAffirmation(String line) {
-        String[] p = line.split(",", -1);
-        if (p.length < 4) return null;
         try {
-            int id = Integer.parseInt(p[0].trim());
-            String quote = p[1].trim();
-            String category = p[2].trim();
-            boolean user = parseBool(p[3]);
+            ArrayList<String> fields = parseCsvLine(line);
+
+            if (fields.size() < 4) return null;
+
+            int id = Integer.parseInt(fields.get(0).trim());
+            String quote = fields.get(1).trim();
+            String category = fields.get(2).trim();
+            boolean user = parseBool(fields.get(3));
+
             return new Affirmation(id, quote, category, user);
         } catch (Exception e) {
             System.out.println("Bad row: " + line);
@@ -117,7 +120,6 @@ public class AffirmationManager {
         }
     }
 
-    // NEW: Proper CSV parser that handles quoted fields
     private ArrayList<String> parseCsvLine(String line) {
         ArrayList<String> fields = new ArrayList<>();
         StringBuilder currentField = new StringBuilder();
