@@ -20,7 +20,7 @@
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
-      <Label fx:id="selfLoveAffirmationLabel" layoutX="145.0" layoutY="115.0" prefHeight="110.0" prefWidth="315.0" textFill="#eff1ed" wrapText="true">
+      <Label fx:id="selfLoveAffirmationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="115.0" prefHeight="110.0" prefWidth="315.0" textFill="#eff1ed" wrapText="true">
          <font>
             <Font name="Droid Sans Bold" size="20.0" />
          </font></Label>

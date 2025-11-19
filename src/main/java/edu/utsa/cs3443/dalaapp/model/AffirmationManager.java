@@ -117,6 +117,34 @@ public class AffirmationManager {
         }
     }
 
+    // NEW: Proper CSV parser that handles quoted fields
+    private ArrayList<String> parseCsvLine(String line) {
+        ArrayList<String> fields = new ArrayList<>();
+        StringBuilder currentField = new StringBuilder();
+        boolean inQuotes = false;
+
+        for (int i = 0; i < line.length(); i++) {
+            char c = line.charAt(i);
+
+            if (c == '"') {
+                if (inQuotes && i + 1 < line.length() && line.charAt(i + 1) == '"') {
+                    currentField.append('"');
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
+                }
+            } else if (c == ',' && !inQuotes) {
+                fields.add(currentField.toString());
+                currentField = new StringBuilder();
+            } else {
+                currentField.append(c);
+            }
+        }
+        fields.add(currentField.toString());
+
+        return fields;
+    }
+
     private boolean parseBool(String s) {
         s = s.trim().toLowerCase();
         return s.equals("true") || s.equals("1") || s.equals("yes");

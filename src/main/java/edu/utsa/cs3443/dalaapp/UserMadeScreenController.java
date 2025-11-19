@@ -9,53 +9,88 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class UserMadeScreenController {
     private AffirmationManager affirmationManager;
+    private String selectedCategory = "";
+    private ToggleGroup categoryGroup;
 
     @FXML private TextField inputAffirmationTextField;
     @FXML private Label userMessageLabel;
+    @FXML private RadioButton funnyRB;
+    @FXML private RadioButton selfLoveRB;
+    @FXML private RadioButton motivationalRB;
 
     @FXML
     public void initialize() {
-        /* need code here */
+        affirmationManager = AffirmationManager.getInstance();
+        categoryGroup = new ToggleGroup();
+
+        funnyRB.setToggleGroup(categoryGroup);
+        selfLoveRB.setToggleGroup(categoryGroup);
+        motivationalRB.setToggleGroup(categoryGroup);
+
+        userMessageLabel.setText("");
     }
 
     @FXML
-    void backButtonClicked(ActionEvent e) throws Exception{
-        switchScene(e,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+    void backButtonClicked(ActionEvent event) throws Exception{
+        switchScene(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
     }
 
     @FXML
-    void onCancelClicked(ActionEvent e) throws Exception {
-        switchScene(e,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
+    void onCancelClicked(ActionEvent event) throws Exception {
+        switchScene(event,"/edu/utsa/cs3443/dalaapp/layouts/menu.fxml");
     }
 
     @FXML
     void onSaveClicked(ActionEvent event) {
-        if(inputAffirmationTextField == null){
-           userMessageLabel.setText("Please enter an affirmation below.");
+        String affirmationText = inputAffirmationTextField.getText();
+
+        if (affirmationText == null || affirmationText.trim().isEmpty()) {
+            userMessageLabel.setText("Please enter an affirmation below.");
+            return;
         }
 
-        /* need code here */
-    }
+        if (selectedCategory.isEmpty()) {
+            userMessageLabel.setText("Please select a category.");
+            return;
+        }
 
-    //NOTE: this method does NAWT work yet.. but trust, it will.
-    private void addNewAffirmation(Affirmation a){
-        int id = a.getId() + 1;
-
-        a.setId(id);
-        a.setCategory("");
-        a.setQuote("");
-        a.setUserMade(true);
-
-        if (affirmationManager.addUserAffirmation("","")){
+        boolean success = affirmationManager.addUserAffirmation(affirmationText, selectedCategory);
+        if (success) {
             userMessageLabel.setText("New Affirmation Added Successfully!");
+            inputAffirmationTextField.clear();
+
+            selectedCategory = "";
+            if (categoryGroup != null) {
+                categoryGroup.selectToggle(null);
+            }
         } else {
             userMessageLabel.setText("New Affirmation Could Not Be Added.");
         }
+    }
+
+    @FXML
+    void selfLoveRBClicked(ActionEvent event) {
+        selectedCategory = "Self-Love";
+        userMessageLabel.setText("");
+    }
+
+    @FXML
+    void funnyRBClicked(ActionEvent event) {
+        selectedCategory = "Funny";
+        userMessageLabel.setText("");
+    }
+
+    @FXML
+    void motivationalRBClicked(ActionEvent event) {
+        selectedCategory = "Motivational";
+        userMessageLabel.setText("");
     }
 
     private void switchScene(ActionEvent e, String fxml) throws Exception {
