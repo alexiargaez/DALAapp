@@ -16,7 +16,7 @@
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="170.0" layoutY="275.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #717744; -fx-border-radius: 50px; -fx-border-color: white;" text="Go back to home page" textFill="#bcbd8b">
+      <Button layoutX="170.0" layoutY="275.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="33.0" prefWidth="253.0" style="-fx-background-radius: 50px; -fx-background-color: #717744; -fx-border-radius: 50px; -fx-border-color: #bcbd8b;" text="Go back to home page" textFill="#bcbd8b">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
