@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.SignUpController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.SignUpScreenController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
@@ -20,7 +20,7 @@
             <Font name="Droid Sans" size="14.0" />
          </font>
       </PasswordField>
-      <Button layoutX="225.0" layoutY="321.0" mnemonicParsing="false" onAction="#createAccClicked" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Create Account" textFill="#717744">
+      <Button layoutX="225.0" layoutY="321.0" mnemonicParsing="false" onAction="#createAccountButtonClicked" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Create Account" textFill="#717744">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
@@ -29,17 +29,17 @@
             <Font name="Droid Sans" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="emailTextField" layoutX="104.0" layoutY="185.0" prefHeight="25.0" prefWidth="393.0" promptText="Email" style="-fx-background-radius: 50px;">
+      <TextField fx:id="emailTextField" layoutX="104.0" layoutY="185.0" onAction="#emailButton" prefHeight="25.0" prefWidth="393.0" promptText="Email" style="-fx-background-radius: 50px;">
          <font>
             <Font name="Droid Sans" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="lastNameTextField" layoutX="104.0" layoutY="147.0" prefHeight="25.0" prefWidth="393.0" promptText="Last Name" style="-fx-background-radius: 50px;">
+      <TextField fx:id="lastNameTextField" layoutX="104.0" layoutY="147.0" onAction="#lastNameButton" prefHeight="25.0" prefWidth="393.0" promptText="Last Name" style="-fx-background-radius: 50px;">
          <font>
             <Font name="Droid Sans" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="firstNameTextField" layoutX="104.0" layoutY="109.0" prefHeight="25.0" prefWidth="393.0" promptText="First Name" style="-fx-background-radius: 50px;">
+      <TextField fx:id="firstNameTextField" layoutX="104.0" layoutY="109.0" onAction="#firstNameButton" prefHeight="25.0" prefWidth="393.0" promptText="First Name" style="-fx-background-radius: 50px;">
          <font>
             <Font name="Droid Sans" size="14.0" />
          </font>
