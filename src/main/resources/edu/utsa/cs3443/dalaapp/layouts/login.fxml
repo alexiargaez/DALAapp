@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.dalaapp.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/welcome.png" />
+         </image></ImageView>
+      <TextField fx:id="usernameTextField" layoutX="104.0" layoutY="199.0" prefHeight="25.0" prefWidth="393.0" promptText="Username" style="-fx-background-radius: 50px;">
+         <font>
+            <Font name="Droid Sans" size="14.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="104.0" layoutY="237.0" prefHeight="25.0" prefWidth="393.0" promptText="Password" style="-fx-background-radius: 50px;">
+         <font>
+            <Font name="Droid Sans" size="14.0" />
+         </font>
+      </PasswordField>
+      <CheckBox fx:id="rememberMeCheck" graphicTextGap="5.0" layoutX="105.0" layoutY="275.0" mnemonicParsing="false" text="Remember Me" textFill="#766153">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font></CheckBox>
+      <Button layoutX="328.0" layoutY="304.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="33.0" prefWidth="85.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Log In" textFill="#717744">
+         <font>
+            <Font name="Droid Sans Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="205.0" layoutY="304.0" mnemonicParsing="false" onAction="#signUpButtonClicked" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-color: #bcbd8c; -fx-border-radius: 50px;" text="Sign Up" textFill="#bcbd8c">
+         <font>
+            <Font name="Droid Sans Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

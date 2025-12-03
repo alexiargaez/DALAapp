@@ -14,18 +14,18 @@ import java.util.concurrent.CompletableFuture;
 
 public class SignUpController {
 
-    @FXML private TextField usernameField;
-    @FXML private TextField emailField;
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
+    @FXML private TextField usernameTextField;
+    @FXML private TextField emailTextField;
+    @FXML private TextField firstNameTextField;
+    @FXML private TextField lastNameTextField;
     @FXML private PasswordField passwordField;
 
     @FXML
-    private void handleRegister() {
-        String username = usernameField.getText().trim();
-        String email = emailField.getText().trim();
-        String firstName = firstNameField.getText().trim();
-        String lastName = lastNameField.getText().trim();
+    private void createAccClicked() {
+        String username = usernameTextField.getText().trim();
+        String email = emailTextField.getText().trim();
+        String firstName = firstNameTextField.getText().trim();
+        String lastName = lastNameTextField.getText().trim();
         String password = passwordField.getText().trim();
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
@@ -74,7 +74,7 @@ public class SignUpController {
 
     @FXML
     private void goToLogin() {
-        Navigation.load("/com/idktogo/idk_to_go/login.fxml");
+        Navigation.load("edu/utsa/cs3443/dalaapp/layouts/login.fxml");
     }
 
     private void showAlert(String title, String message) {

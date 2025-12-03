@@ -12,11 +12,10 @@ import javafx.stage.Stage;
 
 public class WelcomeScreenController {
 
-    @FXML private Button start; // fx:id="start"
+    @FXML private Button start;
 
     @FXML
     public void initialize() {
-        // Load CSV once via singleton
         AffirmationManager.getInstance();
     }
 

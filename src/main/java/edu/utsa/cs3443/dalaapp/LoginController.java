@@ -7,20 +7,17 @@ import com.idktogo.idk_to_go.data.AppStorage;
 import com.idktogo.idk_to_go.model.User;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-public class LogInController {
+public class LoginController {
 
-    @FXML private TextField usernameField;
+    @FXML private TextField usernameTextField;
     @FXML private PasswordField passwordField;
     @FXML private CheckBox rememberMeCheck;
 
     @FXML
-    private void handleLogin() {
-        String username = usernameField.getText().trim();
+    private void loginButtonClicked() {
+        String username = usernameTextField.getText().trim();
         String password = passwordField.getText().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
@@ -59,9 +56,7 @@ public class LogInController {
     }
 
     @FXML
-    private void goToRegister() {
-        Navigation.load("/com/idktogo/idk_to_go/register.fxml");
-    }
+    private void signUpButtonClicked() { Navigation.load("/com/idktogo/idk_to_go/register.fxml"); }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
