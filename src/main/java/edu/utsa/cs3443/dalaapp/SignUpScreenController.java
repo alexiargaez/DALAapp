@@ -61,6 +61,11 @@ public class SignUpScreenController {
     }
 
     @FXML
+    private void goBackButtonClicked(ActionEvent event) throws Exception{
+        switchTo(event, "/layouts/login.fxml", "DALA - Log In");
+    }
+
+    @FXML
     private void createAccountButtonClicked(ActionEvent event) {
         createAccount(event);
     }

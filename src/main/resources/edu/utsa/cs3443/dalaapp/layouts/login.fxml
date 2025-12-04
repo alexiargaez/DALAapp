@@ -20,18 +20,23 @@
             <Font name="Droid Sans" size="14.0" />
          </font>
       </PasswordField>
-      <CheckBox fx:id="rememberMeCheck" graphicTextGap="5.0" layoutX="105.0" layoutY="275.0" mnemonicParsing="false" text="Remember Me" textFill="#766153">
+      <CheckBox fx:id="rememberMeCheckBox" graphicTextGap="5.0" layoutX="105.0" layoutY="275.0" mnemonicParsing="false" text="Remember Me" textFill="#766153">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font></CheckBox>
-      <Button layoutX="328.0" layoutY="304.0" mnemonicParsing="false" onAction="#usernameButton" prefHeight="33.0" prefWidth="85.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Log In" textFill="#717744">
+      <Button layoutX="328.0" layoutY="304.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="33.0" prefWidth="85.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Log In" textFill="#717744">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="205.0" layoutY="304.0" mnemonicParsing="false" onAction="#onSignUpClicked" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-color: #bcbd8c; -fx-border-radius: 50px;" text="Sign Up" textFill="#bcbd8c">
+      <Button layoutX="205.0" layoutY="304.0" mnemonicParsing="false" onAction="#signUpButtonClicked" prefHeight="33.0" prefWidth="92.0" style="-fx-background-color: #717744; -fx-background-radius: 50px; -fx-border-color: #bcbd8c; -fx-border-radius: 50px;" text="Sign Up" textFill="#bcbd8c">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font>
       </Button>
+      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="83.0" prefHeight="20.0" prefWidth="282.0" textAlignment="CENTER" textFill="#eff1ed">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
