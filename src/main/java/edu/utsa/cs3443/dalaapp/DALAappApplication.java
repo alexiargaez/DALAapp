@@ -6,7 +6,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 
+/**
+ * stats the DALA application app
+ */
 public class DALAappApplication extends Application {
+    /**
+     * manages the main window
+     * @param stage main application window
+     * @throws Exception if the FXML cant be loaded
+     */
     @Override
             public void start(Stage stage) throws Exception{
     Parent root = FXMLLoader.load(
@@ -15,6 +23,11 @@ public class DALAappApplication extends Application {
         stage.setScene(new Scene(root, 600, 400));
         stage.show();
 }
+
+    /**
+     * launches the app
+     * @param args command line arguments
+     */
     public static void main(String[] args){
         launch(args);
     }
