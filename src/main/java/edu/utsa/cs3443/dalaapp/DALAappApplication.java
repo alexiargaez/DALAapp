@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 
 /**
- * stats the DALA application app
+ * starts the DALA application app
  */
 public class DALAappApplication extends Application {
     /**
@@ -16,7 +16,7 @@ public class DALAappApplication extends Application {
      * @throws Exception if the FXML cant be loaded
      */
     @Override
-            public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception{
     Parent root = FXMLLoader.load(
             getClass().getResource("/edu/utsa/cs3443/dalaapp/layouts/welcome.fxml"));
         stage.setTitle("DALA — Daily Affirmations");

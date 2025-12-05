@@ -26,16 +26,16 @@
             <Font name="Droid Sans" size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="usernameTextField" layoutX="104.0" layoutY="243.0" prefHeight="25.0" prefWidth="393.0" promptText="Username" style="-fx-background-radius: 50px;">
+      <TextField fx:id="usernameTextField" layoutX="104.0" layoutY="243.0" onAction="#usernameButton" prefHeight="25.0" prefWidth="393.0" promptText="Username" style="-fx-background-radius: 50px;">
          <font>
             <Font name="Droid Sans" size="14.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordField" layoutX="104.0" layoutY="281.0" prefHeight="25.0" prefWidth="393.0" promptText="Password" style="-fx-background-radius: 50px;">
+      <PasswordField fx:id="passwordField" layoutX="104.0" layoutY="281.0" onAction="#passwordButton" prefHeight="25.0" prefWidth="393.0" promptText="Password" style="-fx-background-radius: 50px;">
          <font>
             <Font name="Droid Sans" size="14.0" />
          </font>
       </PasswordField>
-      <Button layoutX="315.0" layoutY="320.0" mnemonicParsing="false" onAction="#createAccountButtonClicked" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Create Account" textFill="#717744">
+      <Button layoutX="315.0" layoutY="320.0" mnemonicParsing="false" onAction="#createAccountClicked" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #bcbd8c; -fx-background-radius: 50px; -fx-border-color: #717744; -fx-border-radius: 50px;" text="Create Account" textFill="#717744">
          <font>
             <Font name="Droid Sans Bold" size="14.0" />
          </font></Button>

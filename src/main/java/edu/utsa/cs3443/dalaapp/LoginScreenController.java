@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 /**
  * controls the login screen
  */
-
 public class LoginScreenController {
     private UserManager userManager;
 
@@ -28,7 +27,6 @@ public class LoginScreenController {
     /**
      * initializes the login screen
      */
-
     @FXML
     public void initialize() {
         userManager = UserManager.getInstance();
@@ -41,7 +39,6 @@ public class LoginScreenController {
      * handles pressing username button
      * @param event event action event
      */
-
     @FXML
     private void usernameButton(ActionEvent event) {
         performLogin(event);
@@ -51,7 +48,6 @@ public class LoginScreenController {
      * handles pressing the password button
      * @param event action event
      */
-
     @FXML
     private void passwordButton(ActionEvent event) {
         performLogin(event);
@@ -61,7 +57,6 @@ public class LoginScreenController {
      * handles the login button
      * @param event action event
      */
-
     @FXML
     private void loginButtonClicked(ActionEvent event) {
         performLogin(event);
@@ -71,7 +66,6 @@ public class LoginScreenController {
      * performs the login and goes to the menu
      * @param event action event
      */
-
     private void performLogin(ActionEvent event) {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
@@ -110,7 +104,6 @@ public class LoginScreenController {
      * opens the sign-up screen
      * @param event action event
      */
-
     @FXML
     private void onSignUpClicked(ActionEvent event) {
         try {
@@ -125,7 +118,6 @@ public class LoginScreenController {
      * handles the sign-up button
      * @param event action event
      */
-
     @FXML
     private void signUpButtonClicked(ActionEvent event) {
         onSignUpClicked(event);
@@ -135,7 +127,6 @@ public class LoginScreenController {
      * goes back to the welcome screen
      * @param event action event
      */
-
     @FXML
     private void onBackClicked(ActionEvent event) {
         try {
@@ -147,13 +138,12 @@ public class LoginScreenController {
     }
 
     /**
-     * switches to another screnn
+     * switches to another screen
      * @param event action event
      * @param fxmlPath FXML file path
      * @param title window title
      * @throws Exception if the FXML cant be loaded
      */
-
     private void switchTo(ActionEvent event, String fxmlPath, String title) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

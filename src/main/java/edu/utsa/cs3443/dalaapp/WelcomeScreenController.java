@@ -10,21 +10,31 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * Contains the logic behind the
+ * welcome.fxml screen view
+ */
 public class WelcomeScreenController {
 
     @FXML private Button start;
 
+    /**
+     * Initializes an instance of
+     * both manager objects.
+     */
     @FXML
     public void initialize() {
-        // Initialize both managers
         AffirmationManager.getInstance();
         UserManager.getInstance();
     }
 
+    /**
+     * Switches the screen to the login.fxml
+     * if no errors occur.
+     */
     @FXML
     private void onStart() {
         try {
-            // Navigate to login screen
             Parent root = FXMLLoader.load(
                     getClass().getResource("/edu/utsa/cs3443/dalaapp/layouts/login.fxml")
             );
